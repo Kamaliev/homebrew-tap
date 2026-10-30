@@ -20,6 +20,16 @@ cask "clipvault" do
   postflight_steps do
     run "/usr/bin/xattr",
         args: ["-dr", "com.apple.quarantine", "{{appdir}}/Clipvault.app"]
+    run "/usr/bin/osascript",
+        args: ["-e", 'tell application "System Events" to make login item at end ' \
+                     'with properties {path:"/Applications/Clipvault.app", hidden:false}'],
+        must_succeed: false
+  end
+
+  uninstall_preflight_steps do
+    run "/usr/bin/osascript",
+        args: ["-e", 'tell application "System Events" to delete login item "Clipvault"'],
+        must_succeed: false
   end
 
   uninstall quit: "com.kamaliev.clipvault"
