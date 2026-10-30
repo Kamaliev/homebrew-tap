@@ -1,6 +1,6 @@
 cask "clipvault" do
-  version "0.1.1"
-  sha256 "48a51c9c03fcab631b23e9ce33e2bffa5b1ca066cf6453bbb87ae6b8091ff388"
+  version "0.2.0"
+  sha256 "fdc7db7bfd48aef102554b526b61459afe89d9dace5beed091efaa8ad67189f9"
 
   url "https://github.com/Kamaliev/clipvault/releases/download/v#{version}/Clipvault-#{version}.zip"
   name "Clipvault"
